@@ -28,7 +28,7 @@ public class Main {
 
             double convertValue = convertMeasurement(userStartingMeasurement, userEndingMeaurement, userValue);
 
-            System.out.println(userValue + " " + getMeasurementType(userStartingMeasurement) + " = " + convertValue + " " + getMeasurementType(userEndingMeaurement));
+            System.out.println(userValue + " " + getMeasurementType(userStartingMeasurement) + " = " + String.format("%.1f",convertValue) + " " + getMeasurementType(userEndingMeaurement));
 
         System.out.println("Would you like to convert another measurement? (1) yes or (2) no");
         int choice = scanner.nextInt();
