@@ -8,7 +8,11 @@ public class Main {
         boolean continueNewConversion = true;
 
         while (continueNewConversion) {
+            System.out.print("\u001B[35m");
+            System.out.print("\u001B[4m");
             System.out.println("Welcome to the Kitchen Measurement Convertor");
+            System.out.print("\u001B[0m");
+
 
             System.out.println("Starting measurement type:\n Select and press enter\n (1) teaspoon (2) tablespoon\n " +
                     "(3) cup      (4) ounce\n " +
