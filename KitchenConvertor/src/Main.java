@@ -1,3 +1,4 @@
+import java.nio.file.attribute.UserPrincipal;
 import java.util.Scanner;
 
 public class Main {
@@ -18,5 +19,37 @@ public class Main {
 
         int userEndingMeaurement = scanner.nextInt();
 
+        System.out.println("PLease enter value:");
+
+        int userValue = scanner.nextInt();
+
+        double convertValue = convertMeasurement(userStartingMeasurement, userEndingMeaurement, userValue);
+
+        System.out.println(userValue + " " + getMeasurementType(userStartingMeasurement) + " = " + convertValue + " " + getMeasurementType(userEndingMeaurement));
     }
+    public static double convertMeasurement(int from, int to, double value){
+        if (from == 1 && to ==2){
+            return value / 3.0;
+        }
+        return value;
+    }
+
+    public static String getMeasurementType(int measurement){
+        switch (measurement){
+            case 1:
+                return "teaspoon";
+            case 2:
+                return "tablespoon";
+            case 3:
+                return "cup";
+            case 4:
+                return "ounces";
+            case 5:
+                return "pint";
+            case 6:
+                return "gallon";
+        }
+        return "unknown";
+    }
+
 }
