@@ -19,22 +19,22 @@ public class Main {
                     "(3) cup      (4) ounce\n " +
                     "(5) pint     (6) gallon");
 
-            int userStartingMeasurement = scanner.nextInt();
+            double userStartingMeasurement = scanner.nextDouble();
 
             System.out.println("To measurement type:\n Select and press enter\n " +
                     "(1) teaspoon (2) tablespoon\n " +
                     "(3) cup      (4) ounce\n " +
                     "(5) pint     (6) gallon");
 
-            int userEndingMeaurement = scanner.nextInt();
+            double userEndingMeaurement = scanner.nextDouble();
 
             System.out.println("PLease enter value:");
 
-            int userValue = scanner.nextInt();
+            double userValue = scanner.nextDouble();
 
             double convertValue = convertMeasurement(userStartingMeasurement, userEndingMeaurement, userValue);
 
-            System.out.println(userValue + " " + getMeasurementType(userStartingMeasurement) + " = " + String.format("%.2f",convertValue) + " " + getMeasurementType(userEndingMeaurement));
+            System.out.println(userValue + " " + getMeasurementType((int)userStartingMeasurement) + " = " + String.format("%.2f",convertValue) + " " + getMeasurementType((int)userEndingMeaurement));
 
         System.out.println("Would you like to convert another measurement? (1) yes or (2) no");
         int choice = scanner.nextInt();
@@ -47,7 +47,7 @@ public class Main {
         }
     }
 
-        public static double convertMeasurement ( int from, int to, double value){
+        public static double convertMeasurement ( double from, double to, double value){
             if (from == 1 && to == 2) {
                 return value / 3;
             }
@@ -113,6 +113,27 @@ public class Main {
             }
             if (from == 6 && to == 3){
                 return value * 15.772;
+            }
+            if (from == 4 && to == 5) {
+                return value / 16;
+            }
+            if(from == 5 && to == 4){
+                return value * 16;
+            }
+            if (from == 4 && to == 6){
+                return value / 128;
+            }
+            if (from == 6 && to == 4){
+                return value * 128;
+            }
+            if (from == 5 && to == 6){
+                return value / 8;
+            }
+            if (from == 6 && to == 5){
+                return value * 8;
+            }
+            if (from == to){
+                return value;
             }
 
 
